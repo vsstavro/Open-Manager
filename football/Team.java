@@ -70,11 +70,13 @@ public class Team {
 
     public void calculateOffence()
     {
+        int temp = 0;
         for(Player player : players)
         {
-            offence = offence + player.getOffence();
+            temp = temp + player.getOffence();
         }
-        offence = offence/11;
+        temp = temp/11;
+        offence = temp;
     }
 
     public int getDefence() {
@@ -87,11 +89,13 @@ public class Team {
 
     public void calculateDefence()
     {
+        int temp = 0;
         for(Player player : players)
         {
-            defence = defence + player.getDefence();
+            temp = temp + player.getDefence();
         }
-        defence = defence/11;
+        temp = temp/11;
+        defence = temp;
     }
 
     public boolean isUser() {
@@ -158,5 +162,21 @@ public class Team {
         wins = 0;
         loses = 0;
         draws = 0;
+    }
+
+    public void offenceTraining()
+    {
+        for(Player player : players) {
+            player.setOffence(player.getOffence()+1);
+        }
+        calculateOffence();
+    }
+
+    public void defenceTraining()
+    {
+        for(Player player : players) {
+            player.setDefence(player.getDefence()+1);
+        }
+        calculateDefence();
     }
 }

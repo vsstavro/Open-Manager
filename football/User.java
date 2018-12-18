@@ -5,7 +5,7 @@ public class User {
 
     public User()
     {
-
+        coins = 0;
     }
 
     public int getCoins() {

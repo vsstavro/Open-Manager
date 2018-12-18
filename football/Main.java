@@ -16,8 +16,6 @@ public class Main {
         user = new User();
     }
 
-
-
     public boolean processCommand(Command command)
     {
         boolean wantToQuit=false;
@@ -64,9 +62,36 @@ public class Main {
         }
         else if(commandWord.equals("coins"))
         {
-            System.out.println("You have"+user.getCoins()+" coins");
+            useCoins();
         }
         return wantToQuit;
+    }
+
+    public void useCoins() {
+        System.out.println("Your virtual coins : " + user.getCoins());
+        System.out.println("1 : Offence Training");
+        System.out.println("2 : Defence Training");
+        System.out.println("3 : Return to main menu");
+        int n = 0;
+        while (n != 3) {
+            n = reader.nextInt();
+            if (n ==1 ){
+                if(user.getCoins()>100) {
+                    season.picked().offenceTraining();
+                    user.setCoins(user.getCoins()-100);
+                }
+                else
+                    System.out.println("Not enough coins!!");
+            }
+            else if(n == 2){
+                if(user.getCoins()>100) {
+                    season.picked().defenceTraining();
+                    user.setCoins(user.getCoins()-100);
+                }
+                else
+                    System.out.println("Not enough coins!!");
+            }
+        }
     }
 
     public void printHelp()
@@ -79,17 +104,10 @@ public class Main {
         System.out.printf(parser.showCommands());
     }
 
-    public void train()
-    {
-        season.picked().calculateOffence();
-        season.picked().calculateDefence();
-    }
-
     public void quit()
     {
         System.exit(0);
     }
-
 
     public void printWelcome()
     {
