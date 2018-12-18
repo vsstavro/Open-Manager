@@ -1,54 +1,34 @@
-package football;
+package manager;
 
 public abstract class Person {
-	private String Fname;
-	private String Lname;
-	private int contract;
-	private Team employee;
-	
-	public Person(String Fname,String Lname,int contract,Team employee)
-	{
-		this.Fname=Fname;
-		this.Lname=Lname;
-		this.contract=contract;
-		this.employee=employee;
-		employee.addPerson(this);
-	}
-	public abstract int getOffence();
-	public abstract int getDefence();
 
-	public String getFname() {
-		return Fname;
-	}
+    private String firstName;
+    private String lastName;
 
-	public void setFname(String fname) {
-		Fname = fname;
-	}
+    public Person(String firstName, String lastName)
+    {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
-	public String getLname() {
-		return Lname;
-	}
+    public String getFirstName()
+    {
+        return firstName;
+    }
 
-	public void setLname(String lname) {
-		Lname = lname;
-	}
-	
-	public Team getEmployee()
-	{
-		return employee;
-	}
-	public void changeEmployee(Team a)
-	{
-		employee=a;
-	}
-	public int getContract() {
-		return contract;
-	}
+    public void setFirstName(String firstName)
+    {
+        this.firstName = firstName;
+    }
 
-	public void setContract(int contract) {
-		this.contract = contract;
-	}
+    public String getLastName()
+    {
+        return lastName;
+    }
 
-	
+    public void setLastName(String lastName)
+    {
+        this.lastName = lastName;
+    }
 
 }

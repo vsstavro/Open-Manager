@@ -1,25 +1,20 @@
-package football;
-
+package manager;
 
 public class Command {
-	private String commandWord;
+    private String commandWord;
 
+    public Command(String firstWord)
+    {
+        commandWord=firstWord;
+    }
 
-public Command(String firstWord)
-{
-	
-	commandWord=firstWord;
-}
-
-public String getCommandWord()
-{
-	return commandWord;
-}
-
-public boolean isUnknown()
-{
-	return (commandWord==null);
-}
-
+    public String getCommandWord()
+    {
+        return commandWord;
+    }
+    public boolean isUnknown()
+    {
+        return (commandWord==null);
+    }
 
 }
