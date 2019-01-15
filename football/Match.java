@@ -106,18 +106,54 @@ public class Match {
                         ok=true;
                     }    
                 } while (ok!=true);
+                //krataw tis arxikes times
+                int save_offence=home.getOffence();
+                int save_defence=home.getDefence();
+                //ypologismos statistikwn
                 if (attperc>50)
                 {
                     int boost =(attperc-50)/5; //na epe3igisw
-                    home.setOffense
-                    
-                
-                //na valw temp
-                //na to kanw gia away
-                
+                    home.setOffense(home.getOffence()+boost);
+                    home.setDefence(home.getDefence()-boost);
+                }
+                if (attperc<50)
+                {
+                    int boost =(attperc-50)/5; //na epe3igisw
+                    home.setOffense(home.getOffence()+boost);
+                    home.setDefence(home.getDefence()-boost);
+                }
             } else if (away.isUser());
             {
-                
+                Boolean ok=false;
+                do {
+                    Scanner keyboard = new Scanner(System.in);
+                    System.out.println("Choose Team Mentality");
+                    System.out.println("Attack + Defense should add to 100");
+                    System.out.println("Enter Attack Percentage");
+                    int attperc = keyboard.nextInt();
+                    System.out.println("Enter Defence Percentage");
+                    int defperc = keyboard.nextInt();
+                    if (attperc+defperc=100 && attperce*defperc>0)
+                    {   
+                        ok=true;
+                    }    
+                } while (ok!=true);
+                //krataw arxikes times
+                int save_offence=away.getOffence();
+                int save_defence=away.getDefence();
+                //ypologismos newn statistikwn
+                if (attperc>50)
+                {
+                    int boost =(attperc-50)/5; //na epe3igisw
+                    away.setOffense(away.getOffence()+boost);
+                    away.setDefence(away.getDefence()-boost);
+                }
+                if (attperc<50)
+                {
+                    int boost =(attperc-50)/5; //na epe3igisw
+                    away.setOffense(away.getOffence()+boost);
+                    away.setDefence(away.getDefence()-boost);
+                }     
             }
             int hg=calculateHomeGoal();
             int ag=calculateAwayGoal();
@@ -127,6 +163,17 @@ public class Match {
             away.setGoalsAgainst(hg);
             calculatePoints(hg,ag);
             System.out.println("Result in "+home.getName()+"-"+away.getName()+" is: "+hg+"-"+ag);
+            //Epistrefw stis pragmatikes times
+            if (home.isUser())
+            {
+                home.setOffence()=save_offence;
+                home.setDefence()=save_defence;
+            }
+            if (away.isUser())
+            {
+                away.setOffence()=save_offence;
+                away.setDefence()=save_defence;
+            }
         }
         else System.out.println("A team cannot play against itself!!");
     }
