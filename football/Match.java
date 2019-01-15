@@ -1,6 +1,8 @@
 package manager;
 
 import java.util.Random;
+import java.util.Scanner;
+//import java.util.StringTokenizer;
 
 public class Match {
     private Team home;
@@ -85,9 +87,38 @@ public class Match {
 
 
     public void playMatch()
-    {
+    { 
         if(!home.getName().equals(away.getName()))
         {
+            if (home.isUser()) //PREPEI NA TO VALW STO TEAM
+            {
+                Boolean ok=false;
+                do {
+                    Scanner keyboard = new Scanner(System.in);
+                    System.out.println("Choose Team Mentality");
+                    System.out.println("Attack + Defense should add to 100");
+                    System.out.println("Enter Attack Percentage");
+                    int attperc = keyboard.nextInt();
+                    System.out.println("Enter Defence Percentage");
+                    int defperc = keyboard.nextInt();
+                    if (attperc+defperc=100 && attperce*defperc>0)
+                    {   
+                        ok=true;
+                    }    
+                } while (ok!=true);
+                if (attperc>50)
+                {
+                    int boost =(attperc-50)/5; //na epe3igisw
+                    home.setOffense
+                    
+                
+                //na valw temp
+                //na to kanw gia away
+                
+            } else if (away.isUser());
+            {
+                
+            }
             int hg=calculateHomeGoal();
             int ag=calculateAwayGoal();
             home.setGoalsFor(hg);
