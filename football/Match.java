@@ -90,7 +90,7 @@ public class Match {
     { 
         if(!home.getName().equals(away.getName()))
         {
-            if (home.isUser()) //PREPEI NA TO VALW STO TEAM
+            if (home.user==true) //PREPEI NA TO VALW STO TEAM
             {
                 Boolean ok=false;
                 do {
@@ -122,7 +122,7 @@ public class Match {
                     home.setOffense(home.getOffence()+boost);
                     home.setDefence(home.getDefence()-boost);
                 }
-            } else if (away.isUser());
+            } else if (away.user=true);
             {
                 Boolean ok=false;
                 do {
